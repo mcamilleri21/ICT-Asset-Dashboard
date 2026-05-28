@@ -2,7 +2,7 @@
 
 > **Interactive visualisation of ICT assets, roles, and third-party dependencies — built for DORA Register of Information compliance.**
 
-![Dashboard screenshot](docs/screenshot.png)
+![Dashboard screenshot](docs/ICT Asset Dashboard_Sample)
 
 A single-file, browser-based tool that reads your existing Excel asset registers and renders an interactive force-directed network graph. Instantly see how hardware, software, and information assets connect to organisational roles, departments, and third-party providers — no server, no installation, no data leaves your browser.
 
