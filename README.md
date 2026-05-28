@@ -34,7 +34,7 @@ This dashboard turns your existing asset registers into a live, explorable depen
 
 > **[Try it now → GitHub Pages link here]**
 
-Upload the sample workbook (`sample_asset.xlsx`) to explore the dashboard with synthetic data.
+Upload the sample workbook (`sample_data.xlsx`) to explore the dashboard with synthetic data.
 
 ---
 
@@ -56,7 +56,7 @@ Your workbook must contain the following sheets (names must match exactly):
 
 ### 2. Open the dashboard
 
-Open `asset-dashboard_adaptive upload.html` in any modern browser (Chrome, Edge, Firefox, Safari).
+Open `index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
 
 ### 3. Load your data
 
@@ -100,7 +100,7 @@ Contributions are very welcome — please open an issue first to discuss what yo
 ## Contributing
 
 1. Fork the repository
-2. Make your changes to `asset-dashboard_adaptive upload.html`
+2. Make your changes to `index.html`
 3. Test with a real or sample workbook
 4. Open a pull request with a brief description of the change and why
 
