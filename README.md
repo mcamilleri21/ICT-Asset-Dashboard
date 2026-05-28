@@ -34,7 +34,7 @@ This dashboard turns your existing asset registers into a live, explorable depen
 
 > **[Try it now → GitHub Pages link here]**
 
-Upload the sample workbook (`sample-data/sample_asset_register.xlsx`) to explore the dashboard with synthetic data.
+Upload the sample workbook (`sample_asset.xlsx`) to explore the dashboard with synthetic data.
 
 ---
 
