@@ -14,7 +14,7 @@ export default function Sidebar() {
     <aside className="fixed top-0 left-0 h-screen w-64 bg-[#1e2a4a] text-white flex flex-col z-10">
       <div className="flex items-center gap-2.5 px-6 py-5 border-b border-white/10">
         <Shield size={20} className="text-blue-400 flex-shrink-0" />
-        <span className="font-semibold text-sm tracking-wide">DORA Platform</span>
+        <span className="font-semibold text-sm tracking-wide">ICT Assets Platform</span>
       </div>
 
       <nav className="flex-1 px-3 py-4 space-y-0.5">

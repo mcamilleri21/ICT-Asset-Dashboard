@@ -2302,8 +2302,8 @@ function loadData(data) {
   allLinks = graph.links;
   populateDropdowns(data);
   applyFilters();
-  document.title = `Asset Relationship Dashboard — ${data.companyName}`;
-  document.getElementById('header').querySelector('h1').textContent = `Asset Relationship Dashboard — ${data.companyName}`;
+  document.title = `Asset Relationship Dashboard — ${data.companyName ?? 'Demo Organisation'}`;
+  document.getElementById('header').querySelector('h1').textContent = `Asset Relationship Dashboard — ${data.companyName ?? 'Demo Organisation'}`;
 }
 
 function loadWorkbook(arrayBuffer) {
