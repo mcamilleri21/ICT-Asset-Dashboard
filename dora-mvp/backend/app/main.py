@@ -23,11 +23,12 @@ def root():
     return {"message": "DORA Platform API", "docs": "/docs", "version": "0.1.0"}
 
 
-# Router includes (uncomment when routers are added in Prompt 3)
-# from .routers import contracts, providers, services, clauses, risk, dashboard
-# app.include_router(contracts.router, prefix="/api/contracts", tags=["contracts"])
-# app.include_router(providers.router, prefix="/api/providers", tags=["providers"])
-# app.include_router(services.router, prefix="/api/services", tags=["services"])
-# app.include_router(clauses.router, prefix="/api/clauses", tags=["clauses"])
-# app.include_router(risk.router, prefix="/api/risk", tags=["risk"])
-# app.include_router(dashboard.router, prefix="/api/dashboard", tags=["dashboard"])
+from .routers import contracts, providers, services, clauses, dashboard, import_excel, export
+
+app.include_router(providers.router,     prefix="/api/providers",  tags=["providers"])
+app.include_router(contracts.router,     prefix="/api/contracts",  tags=["contracts"])
+app.include_router(services.router,      prefix="/api/services",   tags=["services"])
+app.include_router(clauses.router,       prefix="/api",            tags=["clauses"])
+app.include_router(dashboard.router,     prefix="/api/dashboard",  tags=["dashboard"])
+app.include_router(import_excel.router,  prefix="/api/import",     tags=["import"])
+app.include_router(export.router,        prefix="/api/export",     tags=["export"])
