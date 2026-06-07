@@ -1,8 +1,8 @@
 from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload, selectinload
 from ..database import get_db
-from ..models import Contract
+from ..models import Contract, IctService
 from ..schemas import ContractCreate, ContractRead, ContractListItem, ContractDetail, DoraGapScore
 from ..scoring import compute_dora_score
 
@@ -65,7 +65,17 @@ def get_dora_score(contract_id: int, db: Session = Depends(get_db)):
 
 @router.get('/{contract_id}', response_model=ContractDetail)
 def get_contract(contract_id: int, db: Session = Depends(get_db)):
-    c = db.query(Contract).filter(Contract.id == contract_id).first()
+    c = (
+        db.query(Contract)
+        .options(
+            joinedload(Contract.provider),
+            selectinload(Contract.services).selectinload(IctService.locations),
+            selectinload(Contract.clauses),
+            joinedload(Contract.risk_assessment),
+        )
+        .filter(Contract.id == contract_id)
+        .first()
+    )
     if not c:
         raise HTTPException(404, 'Contract not found')
     return c

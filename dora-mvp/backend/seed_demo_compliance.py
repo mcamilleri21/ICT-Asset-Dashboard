@@ -360,7 +360,8 @@ def main():
             clause_count = len(entry["clauses"])
             print(f"  OK: {ref} — {clause_count} clauses" +
                   (" + risk assessment" if entry["risk"] else " (GREY — no clauses)"))
-            enriched += 1
+            if entry["clauses"]:
+                enriched += 1
 
     print(f"\nEnriched {enriched} contracts with DORA compliance data")
 
