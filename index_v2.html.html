@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asset Relationship Dashboard — Abacus Capital Ltd.</title>
+<title>Asset Relationship Dashboard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 <style>
@@ -289,6 +289,10 @@ input[type=range]{
 .badge-inactive{background:rgba(248,81,73,.15);color:var(--accent-red)}
 .badge-exposed{background:rgba(248,81,73,.2);color:var(--accent-red)}
 .badge-internal{background:rgba(88,166,255,.15);color:var(--accent-blue)}
+.badge-green-dora  { background:rgba(63,185,80,.2);  color:#3FB950; }
+.badge-amber-dora  { background:rgba(210,153,34,.2); color:#D29922; }
+.badge-red-dora    { background:rgba(248,81,73,.2);  color:#F85149; }
+.badge-grey-dora   { background:rgba(139,148,158,.2);color:#8B949E; }
 .chip-assets-list{margin-top:6px;font-size:11px}
 .chip-asset-group{margin-top:4px}
 .chip-asset-group strong{color:var(--text-muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px}
@@ -721,7 +725,7 @@ input[type=range]{
     <span class="help-close" id="help-close" data-i18n-aria="close_help" aria-label="Close help">&times;</span>
     <h2 id="help-title" data-i18n="help_title">How to use this dashboard</h2>
     <h4 data-i18n="help_h_loading">Loading data</h4>
-    <p data-i18n-html="help_p_loading">Click <strong>Load data file</strong> to browse to your Excel workbook (.xlsx or .xlsm). The workbook must contain sheets named exactly: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Abacus Capital Ltd. Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.</p>
+    <p data-i18n-html="help_p_loading">Click <strong>Load data file</strong> to browse to your Excel workbook (.xlsx or .xlsm). The workbook must contain sheets named exactly: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.</p>
     <h4 data-i18n="help_h_navigating">Navigating the graph</h4>
     <ul data-i18n-html="help_p_navigating">
       <li>Scroll to zoom, drag background to pan</li>
@@ -1144,7 +1148,7 @@ let currentLang = localStorage.getItem('lang') || 'en';
 
 const TRANSLATIONS = {
   en: {
-    page_title:'Asset Relationship Dashboard — Abacus Capital Ltd.',
+    page_title:'Asset Relationship Dashboard',
     dashboard_title:'Asset Relationship Dashboard',
     load_btn:'Load data file', load_btn_aria:'Load Excel data file',
     sample_banner:'Showing sample data — load your own file to begin',
@@ -1172,7 +1176,7 @@ const TRANSLATIONS = {
     help_h_loading:'Loading data', help_h_navigating:'Navigating the graph',
     help_h_default:'Default view', help_h_filters:'Filters',
     help_h_legend:'Node legend', help_h_border:'Border colour = Classification',
-    help_p_loading:'Click <strong>Load data file</strong> to browse to your Excel workbook (.xlsx or .xlsm). The workbook must contain sheets named exactly: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Abacus Capital Ltd. Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
+    help_p_loading:'Click <strong>Load data file</strong> to browse to your Excel workbook (.xlsx or .xlsm). The workbook must contain sheets named exactly: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
     help_p_navigating:'<li>Scroll to zoom, drag background to pan</li><li>Click a node to see details; click again or press Escape to deselect</li><li>Drag nodes to reposition them</li><li>Use the + / − / ⟳ toolbar buttons to zoom and reset</li>',
     help_p_default:'On load, only <strong>Role</strong> and <strong>ROI Provider</strong> nodes are shown. Tick the Hardware / Software / Information checkboxes in the left panel to overlay those asset types.',
     help_p_filters:'Filters apply immediately and re-run the force simulation. Use the search box to highlight nodes by name or ID.',
@@ -1194,7 +1198,7 @@ const TRANSLATIONS = {
     chip_provider_id:'Provider ID', chip_used_by_roles:'Used by Roles', chip_description:'Description',
   },
   fr: {
-    page_title:'Tableau de bord des actifs — Abacus Capital Ltd.',
+    page_title:'Tableau de bord des actifs',
     dashboard_title:'Tableau de bord des actifs',
     load_btn:'Charger le fichier', load_btn_aria:'Charger le fichier Excel',
     sample_banner:'Données d\'exemple — chargez votre propre fichier pour commencer',
@@ -1222,7 +1226,7 @@ const TRANSLATIONS = {
     help_h_loading:'Chargement des données', help_h_navigating:'Navigation dans le graphe',
     help_h_default:'Vue par défaut', help_h_filters:'Filtres',
     help_h_legend:'Légende des nœuds', help_h_border:'Couleur de bordure = Classification',
-    help_p_loading:'Cliquez sur <strong>Charger le fichier</strong> pour parcourir votre classeur Excel (.xlsx ou .xlsm). Le classeur doit contenir les feuilles : <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Abacus Capital Ltd. Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
+    help_p_loading:'Cliquez sur <strong>Charger le fichier</strong> pour parcourir votre classeur Excel (.xlsx ou .xlsm). Le classeur doit contenir les feuilles : <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
     help_p_navigating:'<li>Défilement pour zoomer, glisser l\'arrière-plan pour naviguer</li><li>Cliquer sur un nœud pour voir les détails ; cliquer à nouveau ou appuyer sur Échap pour désélectionner</li><li>Glisser les nœuds pour les repositionner</li><li>Utiliser les boutons + / − / ⟳ pour zoomer et réinitialiser</li>',
     help_p_default:'Au chargement, seuls les nœuds <strong>Rôle</strong> et <strong>Fournisseur ROI</strong> sont affichés. Cochez les cases Matériel / Logiciel / Information dans le panneau gauche pour superposer ces types d\'actifs.',
     help_p_filters:'Les filtres s\'appliquent immédiatement et relancent la simulation. Utilisez la recherche pour mettre en évidence des nœuds par nom ou ID.',
@@ -1244,7 +1248,7 @@ const TRANSLATIONS = {
     chip_provider_id:'ID fournisseur', chip_used_by_roles:'Utilisé par les rôles', chip_description:'Description',
   },
   de: {
-    page_title:'Asset-Beziehungs-Dashboard — Abacus Capital Ltd.',
+    page_title:'Asset-Beziehungs-Dashboard',
     dashboard_title:'Asset-Beziehungs-Dashboard',
     load_btn:'Datei laden', load_btn_aria:'Excel-Datei laden',
     sample_banner:'Beispieldaten werden angezeigt — laden Sie Ihre eigene Datei',
@@ -1272,7 +1276,7 @@ const TRANSLATIONS = {
     help_h_loading:'Daten laden', help_h_navigating:'Graphen navigieren',
     help_h_default:'Standardansicht', help_h_filters:'Filter',
     help_h_legend:'Knoten-Legende', help_h_border:'Rahmenfarbe = Klassifizierung',
-    help_p_loading:'Klicken Sie auf <strong>Datei laden</strong>, um Ihre Excel-Arbeitsmappe (.xlsx oder .xlsm) zu öffnen. Die Arbeitsmappe muss folgende Blätter enthalten: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Abacus Capital Ltd. Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
+    help_p_loading:'Klicken Sie auf <strong>Datei laden</strong>, um Ihre Excel-Arbeitsmappe (.xlsx oder .xlsm) zu öffnen. Die Arbeitsmappe muss folgende Blätter enthalten: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
     help_p_navigating:'<li>Scrollen zum Zoomen, Hintergrund ziehen zum Verschieben</li><li>Knoten anklicken für Details; erneut klicken oder Escape drücken zum Abwählen</li><li>Knoten ziehen zum Neupositionieren</li><li>Schaltflächen + / − / ⟳ zum Zoomen und Zurücksetzen verwenden</li>',
     help_p_default:'Beim Laden werden nur <strong>Rollen</strong> und <strong>ROI-Anbieter</strong>-Knoten angezeigt. Hardware / Software / Information in der linken Leiste aktivieren.',
     help_p_filters:'Filter werden sofort angewendet und starten die Simulation neu. Suchfeld zum Hervorheben von Knoten nach Name oder ID verwenden.',
@@ -1294,7 +1298,7 @@ const TRANSLATIONS = {
     chip_provider_id:'Anbieter-ID', chip_used_by_roles:'Verwendet von Rollen', chip_description:'Beschreibung',
   },
   es: {
-    page_title:'Panel de relaciones de activos — Abacus Capital Ltd.',
+    page_title:'Panel de relaciones de activos',
     dashboard_title:'Panel de relaciones de activos',
     load_btn:'Cargar archivo', load_btn_aria:'Cargar archivo Excel',
     sample_banner:'Mostrando datos de ejemplo — cargue su propio archivo para comenzar',
@@ -1322,7 +1326,7 @@ const TRANSLATIONS = {
     help_h_loading:'Cargar datos', help_h_navigating:'Navegar el gráfico',
     help_h_default:'Vista predeterminada', help_h_filters:'Filtros',
     help_h_legend:'Leyenda de nodos', help_h_border:'Color de borde = Clasificación',
-    help_p_loading:'Haga clic en <strong>Cargar archivo</strong> para cargar su libro Excel (.xlsx o .xlsm). El libro debe contener las hojas: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Abacus Capital Ltd. Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
+    help_p_loading:'Haga clic en <strong>Cargar archivo</strong> para cargar su libro Excel (.xlsx o .xlsm). El libro debe contener las hojas: <code>Fixed Asset Register (IT)</code>, <code>Software Asset Register</code>, <code>Information Asset Register</code>, <code>Staff</code>, <code>RoleIDs</code>, <code>Dependency Map</code>, <code>ROI</code>.',
     help_p_navigating:'<li>Desplazar para hacer zoom, arrastrar el fondo para mover</li><li>Clic en un nodo para ver detalles; clic de nuevo o Escape para deseleccionar</li><li>Arrastrar nodos para reposicionarlos</li><li>Usar botones + / − / ⟳ para zoom y restablecer</li>',
     help_p_default:'Al cargar, solo se muestran nodos de <strong>Rol</strong> y <strong>Proveedor ROI</strong>. Marque las casillas Hardware / Software / Información en el panel izquierdo para superponer esos tipos.',
     help_p_filters:'Los filtros se aplican inmediatamente y reinician la simulación. Use el cuadro de búsqueda para resaltar nodos por nombre o ID.',
@@ -1490,7 +1494,7 @@ function parseWorkbook(wb) {
   const information = Object.values(infMap);
 
   // ── People ──
-  const peopleRaw = toRows(findSheet('Abacus Capital Ltd. Staff'));
+  const peopleRaw = toRows(findSheet('Staff'));
   const skipNames = new Set(['In Stock','In Storage','All Abacus Capital Ltd.','Name','']);
   const people = [];
   for (const r of peopleRaw) {
@@ -1506,6 +1510,7 @@ function parseWorkbook(wb) {
       Reporting_to: String(r['Reporting to'] || '').trim()
     });
   }
+  const companyName = (peopleRaw.find(r => r['Division'] && r['Division'] !== 'All')?.['Division']) || 'Your Organisation';
 
   // ── Roles ──
   const rolesRaw = toRows(findSheet('RoleIDs'));
@@ -1546,12 +1551,18 @@ function parseWorkbook(wb) {
       const pid = String(row[1] || '').trim();
       const pname = String(row[2] || '').trim();
       if (ref && ref !== 'Contractual arrangement reference number') {
-        roiProviders.push({ Contract_Ref: ref, Provider_ID: pid, Provider_Name: pname || ref });
+        roiProviders.push({
+          Contract_Ref: ref,
+          Provider_ID: pid,
+          Provider_Name: pname || ref,
+          Service_Description: String(row[3] || '').trim(),
+          Notes: String(row[4] || '').trim()
+        });
       }
     }
   }
 
-  return { hardware, software, information, people, roles, dependencyMap, roiProviders };
+  return { hardware, software, information, people, roles, dependencyMap, roiProviders, companyName };
 }
 
 // ─────────────────────────────────────────────
@@ -1652,6 +1663,8 @@ function buildGraph(data) {
       id: `PROV_${p.Contract_Ref}`, type:'provider',
       name: p.Provider_Name, contractRef: p.Contract_Ref,
       providerId: p.Provider_ID,
+      serviceDescription: p.Service_Description,
+      notes: p.Notes,
       department:'External', radius: NODE_RADIUS_DEFAULT.provider,
       criticality:'N/A'
     });
@@ -1914,6 +1927,7 @@ function renderGraph(nodes, links) {
   simulation.alpha(0.6).restart();
   // Auto-stop after cooling
   simulation.on('end', () => simulation.stop());
+  fetchDoraScores();
 }
 
 function onTick() {
@@ -1921,6 +1935,25 @@ function onTick() {
   gMain.selectAll('.node-g').attr('transform', d => `translate(${d.x||0},${d.y||0})`).attr('data-pinned', d => d.fx != null ? '1' : null);
   repositionChip();
   if (simulation.alpha() < 0.001) simulation.stop();
+}
+
+async function fetchDoraScores() {
+  try {
+    const res = await fetch('http://localhost:8000/api/dashboard/provider-dora-scores', { signal: AbortSignal.timeout(2000) });
+    if (!res.ok) return;
+    const scores = await res.json();
+    const ratingColor = { GREEN:'#3FB950', AMBER:'#D29922', RED:'#F85149', GREY:'#8B949E' };
+    scores.forEach(s => {
+      const node = allNodes.find(n => n.type === 'provider' && n.contractRef === s.contract_ref);
+      if (!node) return;
+      gMain.selectAll('.node-g')
+        .filter(d => d.id === `PROV_${s.contract_ref}`)
+        .select('.node-shape')
+        .attr('stroke', ratingColor[s.rating] || ratingColor.GREY)
+        .attr('stroke-width', 4);
+      node.doraRating = s.rating;
+    });
+  } catch(e) { /* API not running — silent */ }
 }
 
 function dragStart(e, d) { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; }
@@ -2105,9 +2138,11 @@ function buildChipHTML(d) {
   } else if (d.type === 'provider') {
     rows += chipRow(t('chip_contract_ref'), d.contractRef || '—');
     rows += chipRow(t('chip_provider_id'), d.providerId || '—');
+    if (d.serviceDescription) rows += chipRow('Service', d.serviceDescription);
     const rolesUsingProv = visNodes.filter(n => n.type==='role' &&
       parseIds(n.contractRefs).includes(d.contractRef));
     if (rolesUsingProv.length) rows += chipRow(t('chip_used_by_roles'), rolesUsingProv.map(n=>n.name).join(', '));
+    if (d.doraRating) rows += chipRow('DORA Score', `<span class="badge badge-${d.doraRating.toLowerCase()}-dora">${d.doraRating}</span>`);
   }
 
   return `<button class="chip-close" aria-label="Close detail panel">×</button>
@@ -2267,6 +2302,8 @@ function loadData(data) {
   allLinks = graph.links;
   populateDropdowns(data);
   applyFilters();
+  document.title = `Asset Relationship Dashboard — ${data.companyName}`;
+  document.getElementById('header').querySelector('h1').textContent = `Asset Relationship Dashboard — ${data.companyName}`;
 }
 
 function loadWorkbook(arrayBuffer) {
