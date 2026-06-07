@@ -1,17 +1,21 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: '' })
+const api = axios.create({ baseURL: '/api' })
 
-export async function fetchSummary() {
-  const { data } = await api.get('/api/dashboard/summary')
-  return data
-}
+export const fetchDashboardSummary  = async ()          => (await api.get('/dashboard/summary')).data
+export const fetchClauseGaps        = async ()          => (await api.get('/dashboard/clause-gaps')).data
+export const fetchProviderRisk      = async ()          => (await api.get('/dashboard/provider-risk')).data
+export const fetchContracts         = async (params={}) => (await api.get('/contracts', { params })).data
+export const fetchContract          = async (id)        => (await api.get(`/contracts/${id}`)).data
+export const fetchContractDoraScore = async (id)        => (await api.get(`/contracts/${id}/dora-score`)).data
+export const fetchProviders         = async ()          => (await api.get('/providers')).data
+export const fetchServices          = async (params={}) => (await api.get('/services', { params })).data
 
-export async function uploadExcel(file) {
+export const uploadExcel = async (file) => {
   const form = new FormData()
   form.append('file', file)
-  const { data } = await api.post('/api/import/excel', form, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  })
-  return data
+  return (await api.post('/import/excel', form)).data
 }
+
+export const upsertClause = async (contractId, type, data) =>
+  (await api.put(`/contracts/${contractId}/clauses/${type}`, data)).data
