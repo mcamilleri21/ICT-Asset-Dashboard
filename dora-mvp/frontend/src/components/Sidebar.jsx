@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { Shield, LayoutDashboard, FileText, Building2, Server } from 'lucide-react'
+import { Shield, LayoutDashboard, FileText, Building2, Server, Network } from 'lucide-react'
 
 const LINKS = [
   { to: '/',          end: true, icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/contracts',            icon: FileText,         label: 'Contracts' },
   { to: '/providers',            icon: Building2,        label: 'Providers' },
   { to: '/services',             icon: Server,           label: 'Services' },
+  { to: '/asset-map',            icon: Network,          label: 'Asset Map' },
 ]
 
 export default function Sidebar() {

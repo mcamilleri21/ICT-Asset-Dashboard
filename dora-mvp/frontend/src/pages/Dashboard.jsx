@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FileText, AlertTriangle, AlertCircle, Clock } from 'lucide-react'
+import { FileText, AlertTriangle, AlertCircle, Clock, Network } from 'lucide-react'
 import {
   PieChart, Pie, Cell,
   BarChart, Bar, XAxis, YAxis, Tooltip, Legend,
@@ -270,6 +270,25 @@ export default function Dashboard() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Asset Map shortcut */}
+      <div
+        className="mt-6 bg-white rounded-xl border border-gray-200 p-4 cursor-pointer hover:shadow-sm transition-shadow flex items-center justify-between"
+        onClick={() => navigate('/asset-map')}
+      >
+        <div>
+          <p className="text-sm font-semibold text-gray-900">
+            View full asset dependency graph →
+          </p>
+          <p className="text-xs text-gray-500 mt-0.5">
+            See all hardware, software, information assets, roles and providers
+            in the interactive network graph.
+          </p>
+        </div>
+        <div className="flex-shrink-0 ml-4 p-2 bg-blue-100 rounded-lg">
+          <Network size={20} className="text-blue-600" />
+        </div>
       </div>
     </div>
   )
